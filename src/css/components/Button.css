@@ -1,0 +1,41 @@
+button {
+    color: var(--textWhite);
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 12px 24px;
+    border: 1px solid transparent;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    position: relative;
+    font-family: var(--fontFamily);
+    box-shadow: 0 10px 24px hsla(12, 88%, 59%, 0.20);
+    isolation: isolate;
+    background-color: var(--backgroundOrange);
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    left: 14%;
+    right: 14%;
+    bottom: -10px;
+    height: 18px;
+    border-radius: 9999px;
+    background: hsla(12, 88%, 59%, 0.65);
+    filter: blur(14px);
+    opacity: .85;
+    z-index: -1;
+    transition: opacity .3s ease-in-out, transform .3s ease-in-out, filter .3s ease-in-out;
+}
+
+button:hover {
+    box-shadow: 0 14px 28px hsla(12, 88%, 59%, 0.28);
+}
+
+button:hover::after {
+    opacity: 1;
+    filter: blur(18px);
+}

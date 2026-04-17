@@ -1,0 +1,42 @@
+header {
+    width: 100%;
+    height: auto;
+    padding: 45px 0px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header img {
+    width: 127.94px;
+    height: 21.04px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+header nav ul {
+    gap: 30px;
+    display: flex;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    color: var(--textBlue);
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .3s ease-in-out;
+}
+
+header nav ul li a:hover {
+    color: var(--textOrange);
+}

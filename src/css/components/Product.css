@@ -1,0 +1,38 @@
+.container__product {
+    width: 100%;
+    height: 525px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    margin: 0px 0px 100px;
+}
+
+.description__product {
+    width: 448px;
+    height: auto;
+}
+
+.description__product h1 {
+    color: var(--textBlue);
+    font-size: 48px;
+    font-weight: 700;
+    text-align: start;
+    line-height: 1;
+    margin: 0px 0px 24px;
+}
+
+.description__product p {
+    color: #9095A7;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: start;
+    line-height: 1.5;
+    max-width: 380px;
+    margin: 0px 0px 25px;
+}
+
+.img__product {
+    width: 580px;
+    height: 525px;
+}
