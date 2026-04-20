@@ -2,6 +2,8 @@
 
 :root {
     --fontSize: 16px;
+    --layoutWidth: 1180px;
+    --headerOffset: 166px;
     --fontFamily: "Be Vietnam Pro", sans-serif;
     --textBlack: hsl(233, 12%, 13%);
     --textOrange: hsl(12, 88%, 59%);
@@ -22,15 +24,24 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
+    min-height: 100dvh;
     font-family: var(--fontFamily);
     background-color: var(--backgroundWhite);
+    background-image: url(../assets/images/bg-tablet-pattern.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top -15.5rem right -15.5rem, top 31rem right -8rem;
+    background-size: 55%, 70%;
+}
+
+#root {
+    width: 100%;
 }
 
 .app {
-    width: 1180px;
-    height: 500dvh;
+    width: min(var(--layoutWidth), calc(100% - 2rem));
+    min-height: 300dvh;
+    padding-top: var(--headerOffset);
+    margin: 0px auto;
     position: relative;
     border: 1px solid black;
 }

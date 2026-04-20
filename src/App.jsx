@@ -6,12 +6,14 @@ import Manage from './components/Manage';
 function App() {
 
   return (
-    <div className="app">
+    <div className="container">
       <Header />
-      <main className="main">
-        <Product />
-        <Manage />
-      </main>
+      <div className="app">
+        <main className="main">
+          <Product />
+          <Manage />
+        </main>
+      </div>
     </div>
   )
 }
