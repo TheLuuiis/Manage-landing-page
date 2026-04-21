@@ -1,0 +1,175 @@
+.container__carrusel {
+    width: 100%;
+    min-height: 459px;
+    text-align: center;
+    margin: 0px 0px 65px;
+}
+
+.title__carrusel {
+    width: 100%;
+    min-height: 36px;
+}
+
+.title__carrusel h4 {
+    color: var(--textBlue);
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.carrusel {
+    --gap: 24px;
+    --duration: 16s;
+    --card-width: calc((100% - (var(--gap) * 2)) / 3);
+    --step: calc(var(--card-width) + var(--gap));
+    --slot-out-left: calc(var(--step) * -1);
+    --slot-0: 0px;
+    --slot-1: var(--step);
+    --slot-2: calc(var(--step) * 2);
+    --slot-3: calc(var(--step) * 3);
+    position: relative;
+    width: 100%;
+    min-height: 380px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 0px 10px;
+}
+
+.profile {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: var(--card-width);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    animation-duration: var(--duration);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: left;
+}
+
+.profile:nth-child(1) {
+    animation-name: slide-1;
+}
+
+.profile:nth-child(2) {
+    animation-name: slide-2;
+}
+
+.profile:nth-child(3) {
+    animation-name: slide-3;
+}
+
+.profile:nth-child(4) {
+    animation-name: slide-4;
+}
+
+.profile img {
+    width: 80px;
+    height: 80px;
+    border: none;
+    margin: 0 auto;
+}
+
+.profile p {
+    color: var(--textBlue);
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px 0;
+    text-transform: capitalize;
+}
+
+.profile q {
+    color: #9095A7;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.75rem;
+}
+
+@keyframes slide-1 {
+    0% {
+        left: var(--slot-0);
+    }
+    24.999% {
+        left: var(--slot-out-left);
+    }
+    25% {
+        left: var(--slot-3);
+    }
+    49.999% {
+        left: var(--slot-2);
+    }
+    74.999% {
+        left: var(--slot-1);
+    }
+    100% {
+        left: var(--slot-0);
+    }
+}
+
+@keyframes slide-2 {
+    0% {
+        left: var(--slot-1);
+    }
+    24.999% {
+        left: var(--slot-0);
+    }
+    49.999% {
+        left: var(--slot-out-left);
+    }
+    50% {
+        left: var(--slot-3);
+    }
+    74.999% {
+        left: var(--slot-2);
+    }
+    100% {
+        left: var(--slot-1);
+    }
+}
+
+@keyframes slide-3 {
+    0% {
+        left: var(--slot-2);
+    }
+    24.999% {
+        left: var(--slot-1);
+    }
+    49.999% {
+        left: var(--slot-0);
+    }
+    74.999% {
+        left: var(--slot-out-left);
+    }
+    75% {
+        left: var(--slot-3);
+    }
+    100% {
+        left: var(--slot-2);
+    }
+}
+
+@keyframes slide-4 {
+    0% {
+        left: var(--slot-3);
+    }
+    24.999% {
+        left: var(--slot-2);
+    }
+    49.999% {
+        left: var(--slot-1);
+    }
+    74.999% {
+        left: var(--slot-0);
+    }
+    100% {
+        left: var(--slot-out-left);
+    }
+}
