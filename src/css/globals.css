@@ -39,11 +39,10 @@ body {
 
 .app {
     width: min(var(--layoutWidth), calc(100% - 2rem));
-    min-height: 300dvh;
+    height: 100%;
     padding-top: var(--headerOffset);
     margin: 0px auto;
     position: relative;
-    border: 1px solid black;
 }
 
 .main {
@@ -51,4 +50,5 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
+    margin: 0px 0px 144px;
 }

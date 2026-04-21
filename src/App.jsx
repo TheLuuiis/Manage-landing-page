@@ -2,6 +2,8 @@ import './css/globals.css';
 import Header from './components/Header';
 import Product from './components/Product';
 import Manage from './components/Manage';
+import Works from './components/Works';
+import Footer from './components/Footer';
 import Carrusel from './components/Carrusel';
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
           <Carrusel />
         </main>
       </div>
+      <Works />
+      <Footer />
     </>
   )
 }

@@ -1,0 +1,34 @@
+.container__works {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+    position: relative;
+    z-index: 9999;
+    background-color: var(--backgroundOrange);
+    background-image: url(/src/assets/images/bg-simplify-section-desktop.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container__works h5 {
+    color: var(--textWhite);
+    max-width: 450px;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: start;
+    margin: 0px 0px 28px;
+}
+
+.container__works button {
+    background-color: var(--textWhite);
+    color: var(--backgroundOrange);
+    box-shadow: 0 10px 24px rgba(255, 255, 255, 0.18);
+}
+
+.container__works button::after {
+    background: rgba(255, 255, 255, 0.5);
+}

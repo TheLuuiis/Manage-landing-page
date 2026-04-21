@@ -49,14 +49,10 @@ const Carrusel = () => {
             </div>
             <div className="carrusel">
                 {profiles.map((profile) => (
-                    <div className="profile" key={profile}>
+                    <div className="profile" key={profile.id}>
                         <img src={profile.image} alt={profile.alt} />
-                        <p>
-                            {profile.name}
-                        </p>
-                        <q>
-                            {profile.quote}
-                        </q>
+                        <p>{profile.name}</p>
+                        <q>{profile.quote}</q>
                     </div>
                 ))}
             </div>

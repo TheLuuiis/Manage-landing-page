@@ -1,0 +1,125 @@
+footer {
+    width: 100%;
+    height: 262px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--backgroundBlack);
+}
+
+.container__footer {
+    width: 1440px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 64px 128px 24px;
+}
+
+.networks {
+    width: 373.33px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.net {
+    gap: 11px;
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.net img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: filter .2s ease-in-out;
+}
+
+.net img:hover {
+    filter: brightness(0) saturate(100%) invert(56%) sepia(76%) saturate(2681%) hue-rotate(339deg) brightness(100%) contrast(91%);
+}
+
+.links {
+    width: 373.33px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link ul {
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.link ul li {
+    list-style: none;
+}
+
+.link ul li a {
+    color: var(--textWhite);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: start;
+    text-decoration: none;
+    transition: .1s ease-in-out;
+}
+
+.link ul li a:hover {
+    color: var(--textOrange);
+}
+
+.container__form {
+    width: 373.34px;
+    height: 110px;
+}
+
+.container__form form {
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.inputs input {
+    color: var(--textBlue);
+    font-size: .875rem;
+    font-weight: 500;
+    text-align: start;
+    border: 1px solid transparent;
+    border-radius: 9999px;
+    line-height: 1.25rem;
+    padding: 10px 16px;
+    outline: none;
+    transition: .3s ease-in-out;
+    background-color: var(--backgroundWhite);
+}
+
+.inputs input:focus {
+    border: 1px solid hsl(12, 88%, 59%);
+}
+
+::placeholder {
+    color: #9095A7;
+    line-height: 1.25rem;
+}
+
+.container__form form button {
+    color: var(--textWhite);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 9999px;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    background-color: var(--backgroundOrange);
+}
+
+.container__form form button:hover {
+    color: var(--textOrange);
+    background-color: var(--backgroundWhite);
+}
