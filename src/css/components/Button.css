@@ -1,4 +1,4 @@
-button {
+.button {
     color: var(--textWhite);
     font-size: 12px;
     font-weight: 700;
@@ -16,7 +16,7 @@ button {
     background-color: var(--backgroundOrange);
 }
 
-button::after {
+.button::after {
     content: "";
     position: absolute;
     left: 14%;
@@ -31,11 +31,11 @@ button::after {
     transition: opacity .3s ease-in-out, transform .3s ease-in-out, filter .3s ease-in-out;
 }
 
-button:hover {
+.button:hover {
     box-shadow: 0 14px 28px hsla(12, 88%, 59%, 0.28);
 }
 
-button:hover::after {
+.button:hover::after {
     opacity: 1;
     filter: blur(18px);
 }

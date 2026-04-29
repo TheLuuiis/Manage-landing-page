@@ -2,7 +2,7 @@ import '../css/components/Button.css';
 
 const Button = () => {
     return (  
-        <button>Get started</button>
+        <button className="button" type="button">Get started</button>
     );
 }
  

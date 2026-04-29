@@ -1,12 +1,13 @@
 .container__works {
     width: 100%;
-    height: 220px;
+    min-height: 220px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 2rem;
     align-items: center;
-    border: 1px solid black;
+    padding: clamp(3rem, 7vw, 4rem) clamp(1.5rem, 8vw, 10rem);
     position: relative;
-    z-index: 9999;
+    z-index: 2;
     background-color: var(--backgroundOrange);
     background-image: url(/src/assets/images/bg-simplify-section-desktop.svg);
     background-position: center;
@@ -17,18 +18,39 @@
 .container__works h5 {
     color: var(--textWhite);
     max-width: 450px;
-    font-size: 36px;
+    font-size: clamp(2rem, 4vw, 2.25rem);
     font-weight: 700;
     text-align: start;
-    margin: 0px 0px 28px;
+    margin: 0;
 }
 
-.container__works button {
+.container__works .button::after {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.container__works .button {
     background-color: var(--textWhite);
     color: var(--backgroundOrange);
     box-shadow: 0 10px 24px rgba(255, 255, 255, 0.18);
 }
 
-.container__works button::after {
-    background: rgba(255, 255, 255, 0.5);
+@media (max-width: 900px) {
+    .container__works {
+        flex-direction: column;
+        text-align: center;
+        background-image: url(/src/assets/images/bg-simplify-section-mobile.svg);
+        background-position: left center;
+        background-size: contain;
+    }
+
+    .container__works h5 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container__works {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
 }

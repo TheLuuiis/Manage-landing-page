@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import '../css/components/Footer.css';
 import ImgFacebook from '../assets/images/icon-facebook.svg';
 import ImgYoutube from '../assets/images/icon-youtube.svg';
@@ -14,6 +15,37 @@ const socialImages = [
 ];
 
 const Footer = () => {
+
+    const [email, setEmail] = useState("");
+    const [error, setError] = useState("");
+    const [touched, setTouched] = useState(false);
+
+    const validarEmail = (valor) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(valor);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setTouched(true);
+
+        if (!email || !validarEmail(email)) {
+            setError('Please insert a valid email.');
+            return;
+        };
+        setError('');
+    };
+
+    const handBlur = () => {
+        setTouched(true);
+
+        if (!validarEmail(email)) {
+            setError('Please insert a valid email.')
+        } else {
+            setError('');
+        };
+    }
+
     return (  
         <footer>
             <div className="container__footer">
@@ -45,11 +77,22 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="container__form">
-                    <form action="#">
+                    <form action="#" onSubmit={handleSubmit}>
                         <div className="inputs">
-                            <input type="text" name="text" placeholder='Updates in your inbox...'/>
+                            <input 
+                                type="email" 
+                                name="foo" 
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                onBlur={handBlur}
+                                placeholder="Updates in your inbox..."
+                                className={touched && error ? 'input error' : 'input'}
+                            />
+                            {touched && error && (
+                                <span className="mensaje-error">{error}</span>
+                            )}
                         </div>
-                        <button>Go</button>
+                        <button type="submit">Go</button>
                     </form>
                 </div>
             </div>

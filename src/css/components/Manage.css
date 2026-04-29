@@ -1,18 +1,17 @@
 .container__manage {
     width: 100%;
-    height: 490px;
+    min-height: 490px;
     display: flex;
-    margin: 0px 0px 65px;
+    gap: clamp(2rem, 4vw, 4rem);
 }
 
 .description__manage {
-    width: 576px;
-    height: 100%;
+    flex: 1 1 20rem;
 }
 
 .description__manage h2 {
     color: var(--textBlue);
-    font-size: 36px;
+    font-size: clamp(2rem, 4vw, 2.25rem);
     font-weight: 700;
     text-align: start;
     line-height: 2.5rem;
@@ -24,25 +23,27 @@
     font-size: 16px;
     font-weight: 500;
     text-align: start;
-    max-width: 350px;
+    max-width: 22rem;
 }
 
 .container__points {
-    width: 576px;
-    height: 100%;
+    flex: 1 1 24rem;
+    min-width: 0;
     display: flex;
-    justify-content: space-between;
+    gap: 2rem;
     flex-direction: column;
 }
 
 .points__manage {
     gap: 20px;
     width: 100%;
-    height: 136px;
+    min-height: 136px;
     display: flex;
+    align-items: flex-start;
 }
 
 .points__manage span {
+    min-width: 4.25rem;
     height: 38px;
     padding: 0px 21px;
     color: var(--textWhite);
@@ -58,7 +59,6 @@
 
 .description__point {
     width: 100%;
-    height: 100%;
 }
 
 .description__point h3 {
@@ -76,4 +76,50 @@
     font-weight: 500;
     text-align: start;
     line-height: 1.55rem;
+}
+
+@media (max-width: 960px) {
+    .container__manage {
+        flex-direction: column;
+    }
+
+    .description__manage,
+    .container__points {
+        width: 100%;
+    }
+
+    .description__manage {
+        text-align: center;
+    }
+
+    .description__manage h2,
+    .description__manage p {
+        text-align: center;
+        max-width: 36rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 540px) {
+    .container__manage {
+        gap: 2.5rem;
+    }
+
+    .description__manage h2 {
+        line-height: 1.2;
+    }
+
+    .points__manage {
+        gap: 1rem;
+        flex-direction: column;
+    }
+
+    .points__manage span {
+        min-width: 0;
+    }
+
+    .description__point h3 {
+        padding-top: 0;
+    }
 }

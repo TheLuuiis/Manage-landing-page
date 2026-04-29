@@ -1,26 +1,30 @@
 footer {
     width: 100%;
-    height: 262px;
+    min-height: 262px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: clamp(2.5rem, 6vw, 4rem) 0px;
     background-color: var(--backgroundBlack);
 }
 
 .container__footer {
-    width: 1440px;
-    height: 100%;
+    width: min(1440px, calc(100% - clamp(1.5rem, 7vw, 8rem)));
+    min-height: 100%;
     display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 64px 128px 24px;
+    align-items: flex-start;
 }
 
 .networks {
-    width: 373.33px;
-    height: 110px;
+    width: min(100%, 23.5rem);
+    min-height: 110px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 1.5rem;
 }
 
 .net {
@@ -28,6 +32,7 @@ footer {
     width: 100%;
     height: auto;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .net img {
@@ -42,10 +47,11 @@ footer {
 }
 
 .links {
-    width: 373.33px;
+    width: min(100%, 23.5rem);
     height: auto;
     display: flex;
     justify-content: space-between;
+    gap: 1.5rem;
 }
 
 .link ul {
@@ -72,19 +78,29 @@ footer {
 }
 
 .container__form {
-    width: 373.34px;
-    height: 110px;
+    width: min(100%, 23.5rem);
+    min-height: 110px;
 }
 
 .container__form form {
     gap: 10px;
     width: 100%;
+    height: auto;
     display: flex;
-    justify-content: end;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.inputs {
+    flex: 1 1 auto;
+    min-height: 4.75rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .inputs input {
+    width: 100%;
     color: var(--textBlue);
     font-size: .875rem;
     font-weight: 500;
@@ -108,10 +124,12 @@ footer {
 }
 
 .container__form form button {
+    flex-shrink: 0;
     color: var(--textWhite);
     font-size: 16px;
     font-weight: 600;
     text-align: center;
+    padding: 12px 24px;
     border: 1px solid transparent;
     border-radius: 9999px;
     transition: .3s ease-in-out;
@@ -122,4 +140,96 @@ footer {
 .container__form form button:hover {
     color: var(--textOrange);
     background-color: var(--backgroundWhite);
+}
+
+.input.error {
+  border: 1px solid red;
+}
+
+/* Placeholder rojo cuando hay error */
+.input.error::placeholder {
+  color: red;
+}
+
+/* Mensaje debajo */
+.mensaje-error {
+    color: red;
+    font-size: .775rem;
+    font-weight: 400;
+    top: 12px;
+    left: 1rem;
+    position: relative;
+}
+
+@media (max-width: 1100px) {
+    .container__footer {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .container__form {
+        justify-self: end;
+    }
+}
+
+@media (max-width: 760px) {
+    footer {
+        padding: 3rem 0px;
+    }
+
+    .container__footer {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .container__form,
+    .networks,
+    .links {
+        width: min(100%, 24rem);
+    }
+
+    .container__form {
+        order: 1;
+        justify-self: center;
+    }
+
+    .links {
+        order: 2;
+    }
+
+    .networks {
+        order: 3;
+        align-items: center;
+    }
+
+    .net {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container__footer {
+        width: calc(100% - 1.5rem);
+        gap: 2.5rem;
+    }
+
+    .container__form form {
+        flex-direction: column;
+    }
+
+    .container__form form button {
+        width: 100%;
+    }
+
+    .links {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 340px) {
+    .links {
+        gap: 1rem;
+        justify-content: space-between;
+    }
 }
